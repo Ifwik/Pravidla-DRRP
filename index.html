@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Genesis RP</title>
+<title>Darkway Reborn RP</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -127,13 +127,37 @@ footer{
 <body>
 
 <nav>
-<h2>Genesis RP</h2>
+<h2>Darkway Reborn</h2>
 <div class="nav-links">
 <a href="#" onclick="showPage('main', this)">O nás</a>
 <a href="#" onclick="showPage('rules', this)">Pravidla</a>
 <a href="#" onclick="showPage('team', this)">Náš tým</a>
 </div>
 </nav>
+function showPage(page, el){
+  document.body.classList.add('fade');
+
+  setTimeout(()=>{
+    document.getElementById('mainPage').classList.add('hidden');
+    document.getElementById('rulesPage').classList.add('hidden');
+    document.getElementById('teamPage').classList.add('hidden');
+
+    document.getElementById(page+'Page').classList.remove('hidden');
+
+    // active link
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    if(el) el.classList.add('active');
+
+    document.body.classList.remove('fade');
+  },200);
+}
+
+// default
+showPage('main', document.querySelector('.nav-links a'));
+</script>
+
+</body>
+</html>
 
 <!-- O NAS -->
 <div id="mainPage">
@@ -144,7 +168,7 @@ footer{
 
 <div class="container">
 <div class="grid">
-<div class="rule"><h3><b>Kdo jsme?</b></h3><p>Genesis RP, začínající FiveM server, kde každý příběh má svůj začátek.
+<div class="rule"><h3><b>Kdo jsme?</b></h3><p>Darkway Reborn RP, začínající FiveM server, kde každý příběh má svůj začátek.
 Jsme komunita zaměřená na kvalitní a realistický roleplay, ve které si zakládáme na přátelské atmosféře a férovém přístupu ke všem hráčům.
 Na našem serveru nezáleží na tom, jestli jsi zkušený hráč nebo úplný nováček, protože každý má u nás stejnou šanci zapojit se a vytvořit si vlastní příběh.
 Můžeš se vydat jakoukoliv cestou, ať už jako poctivý občan, podnikatel, člen záchranných složek, nebo někdo, kdo se pohybuje na hraně zákona.
@@ -156,7 +180,7 @@ Genesis RP je místo, kde začíná tvůj příběh.</p></div>
 
 <div class="rule"><h3><b>Frakce</b></h3><p>Státní složky</p>
  <p>----------------------------------</p>
-<p>Police Department - volné</p>
+<p>Police Department - Obsazené</p>
 <p>Sheriff Department - volné</p>
 <p>Emergency Medical Services - volné</p>
 <p>Goverment - volné</p>
