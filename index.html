@@ -3,190 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Darway Reborn RP</title>
+<title>Darkway Reborn RP</title>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-    background:#050505;
-    color:white;
-    overflow-x:hidden;
+background:#050505;
+color:white;
+overflow-x:hidden;
 }
 
-/* Glow pozadí */
+/* SKY BLUE GLOW */
 
 body::before{
-    content:"";
-    position:fixed;
-    width:100%;
-    height:100%;
-    z-index:-1;
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
 
-    background:
-    radial-gradient(circle at 20% 20%, rgba(0,170,255,.20), transparent 30%),
-    radial-gradient(circle at 80% 30%, rgba(0,170,255,.15), transparent 25%),
-    radial-gradient(circle at 50% 80%, rgba(0,170,255,.20), transparent 35%);
+background:
+radial-gradient(circle at 20% 20%, rgba(0,170,255,.18), transparent 30%),
+radial-gradient(circle at 80% 30%, rgba(0,170,255,.12), transparent 25%),
+radial-gradient(circle at 50% 80%, rgba(0,170,255,.18), transparent 35%);
 
-    animation:pulse 8s infinite alternate;
+animation:pulse 10s infinite alternate;
 }
 
 @keyframes pulse{
-    from{
-        filter:blur(20px);
-    }
-    to{
-        filter:blur(40px);
-    }
+from{
+filter:blur(20px);
+}
+to{
+filter:blur(40px);
+transform:scale(1.03);
+}
 }
 
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-    padding:20px 40px;
+padding:20px 40px;
 
-    background:rgba(0,0,0,.75);
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(10px);
 
-    border-bottom:1px solid rgba(0,170,255,.3);
+border-bottom:1px solid rgba(0,170,255,.35);
 
-    backdrop-filter:blur(10px);
-
-    position:sticky;
-    top:0;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
-    font-size:30px;
-    font-weight:bold;
-    color:#4fc3ff;
-    text-shadow:0 0 15px #00aaff;
+font-size:30px;
+font-weight:700;
+color:#4fc3ff;
+text-shadow:0 0 15px #00aaff;
 }
 
 nav button{
-    padding:12px 22px;
-    margin-left:10px;
+padding:12px 22px;
+margin-left:10px;
 
-    background:rgba(0,170,255,.15);
+background:rgba(0,170,255,.15);
 
-    border:1px solid rgba(0,170,255,.4);
+border:1px solid rgba(0,170,255,.35);
 
-    color:white;
+color:white;
 
-    border-radius:12px;
+border-radius:12px;
 
-    cursor:pointer;
+cursor:pointer;
 
-    transition:.3s;
+transition:.3s;
 }
 
 nav button:hover{
-    background:#00aaff;
-    transform:scale(1.05);
+background:#00aaff;
+transform:scale(1.05);
 }
 
 .page{
-    display:none;
-    padding:50px;
+display:none;
+padding:50px;
 }
 
 .active{
-    display:block;
+display:block;
 }
 
 .hero{
-    text-align:center;
-    padding:80px 20px;
+text-align:center;
+padding:70px 20px;
 }
 
 .hero h1{
-    font-size:60px;
-    color:#4fc3ff;
-    text-shadow:0 0 25px #00aaff;
-    margin-bottom:20px;
+font-size:60px;
+color:#4fc3ff;
+text-shadow:0 0 20px #00aaff;
+margin-bottom:15px;
 }
 
 .hero p{
-    max-width:900px;
-    margin:auto;
-    line-height:1.8;
-    font-size:18px;
+font-size:20px;
+color:#ddd;
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
-    color:#4fc3ff;
-    font-size:40px;
-    text-shadow:0 0 15px #00aaff;
+.container{
+max-width:1400px;
+margin:auto;
 }
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:25px;
 }
 
-.card{
-    background:rgba(5,15,25,.9);
+.rule{
+background:rgba(5,15,25,.92);
 
-    border:1px solid rgba(0,170,255,.4);
+border:1px solid rgba(0,170,255,.35);
 
-    border-radius:18px;
+border-radius:18px;
 
-    padding:25px;
+padding:25px;
 
-    box-shadow:0 0 15px rgba(0,170,255,.15);
+box-shadow:0 0 15px rgba(0,170,255,.15);
 
-    transition:.3s;
+transition:.3s;
 }
 
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 0 25px rgba(0,170,255,.4);
+.rule:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(0,170,255,.35);
 }
 
-.card h3{
-    color:#4fc3ff;
-    margin-bottom:10px;
+.rule h3{
+color:#4fc3ff;
+margin-bottom:15px;
+font-size:24px;
 }
 
-.card p{
-    line-height:1.7;
+.rule p{
+line-height:1.8;
+color:#ddd;
+}
+
+.hidden{
+display:none;
 }
 
 footer{
-    text-align:center;
-    padding:20px;
-    margin-top:50px;
-    border-top:1px solid rgba(0,170,255,.2);
+text-align:center;
+padding:25px;
+margin-top:40px;
+border-top:1px solid rgba(0,170,255,.25);
+color:#4fc3ff;
 }
 
 </style>
 </head>
+
 <body>
 
 <header>
 
-<div class="logo">DARWAY REBORN RP</div>
+<div class="logo">DARKWAY REBORN RP</div>
 
 <nav>
-<button onclick="showPage('onas')">O Nás</button>
-<button onclick="showPage('team')">Team</button>
-<button onclick="showPage('pravidla')">Pravidla</button>
+<button onclick="showPage('mainPage')">O NÁS</button>
+<button onclick="showPage('teamPage')">TEAM</button>
+<button onclick="showPage('rulesPage')">PRAVIDLA</button>
 </nav>
 
 </header>
 
 <!-- O NAS -->
+
 <div id="mainPage">
+
 <section class="hero">
 <h1>O NÁS</h1>
 <p>Moderní RolePlay server zaměřený na kvalitu</p>
@@ -194,259 +204,750 @@ footer{
 
 <div class="container">
 <div class="grid">
-<div class="rule"><h3><b>Kdo jsme?</b></h3><p>Darkway Reborn, začínající FiveM server, kde každý příběh má svůj začátek.
-Jsme komunita zaměřená na kvalitní a realistický roleplay, ve které si zakládáme na přátelské atmosféře a férovém přístupu ke všem hráčům.
-Na našem serveru nezáleží na tom, jestli jsi zkušený hráč nebo úplný nováček, protože každý má u nás stejnou šanci zapojit se a vytvořit si vlastní příběh.
-Můžeš se vydat jakoukoliv cestou, ať už jako poctivý občan, podnikatel, člen záchranných složek, nebo někdo, kdo se pohybuje na hraně zákona.
-Genesis RP je projekt, který se neustále vyvíjí, a proto nasloucháme zpětné vazbě komunity a pracujeme na neustálém zlepšování herního prostředí.
-Každý hráč je pro nás důležitý a má možnost ovlivnit směr, jakým se server bude ubírat.
-Naším cílem je vytvořit stabilní a zábavné prostředí, kam se hráči budou rádi vracet nejen kvůli samotné hře, ale i kvůli lidem, které zde poznají.
-Pokud hledáš místo, kde můžeš začít od začátku a stát se součástí rostoucí komunity, Genesis RP je pro tebe tou správnou volbou.
-Genesis RP je místo, kde začíná tvůj příběh.</p></div>
 
-<div class="rule"><h3><b>Frakce</b></h3><p>Státní složky</p>
- <p>----------------------------------</p>
-<p>Police Department - obsazené</p>
+<div class="rule">
+<h3><b>Kdo jsme?</b></h3>
+
+<p>
+Darkway Reborn RP, začínající FiveM server, kde každý příběh má svůj začátek.
+
+Jsme komunita zaměřená na kvalitní a realistický roleplay, ve které si zakládáme na přátelské atmosféře a férovém přístupu ke všem hráčům.
+
+Na našem serveru nezáleží na tom, jestli jsi zkušený hráč nebo úplný nováček, protože každý má u nás stejnou šanci zapojit se a vytvořit si vlastní příběh.
+
+Můžeš se vydat jakoukoliv cestou, ať už jako poctivý občan, podnikatel, člen záchranných složek, nebo někdo, kdo se pohybuje na hraně zákona.
+
+Genesis RP je projekt, který se neustále vyvíjí, a proto nasloucháme zpětné vazbě komunity a pracujeme na neustálém zlepšování herního prostředí.
+
+Každý hráč je pro nás důležitý a má možnost ovlivnit směr, jakým se server bude ubírat.
+
+Naším cílem je vytvořit stabilní a zábavné prostředí, kam se hráči budou rádi vracet nejen kvůli samotné hře, ale i kvůli lidem, které zde poznají.
+
+Pokud hledáš místo, kde můžeš začít od začátku a stát se součástí rostoucí komunity, Genesis RP je pro tebe tou správnou volbou.
+
+Genesis RP je místo, kde začíná tvůj příběh.
+</p>
+
+</div>
+
+<div class="rule">
+
+<h3><b>Frakce</b></h3>
+
+<p>Státní složky</p>
+<p>----------------------------------</p>
+<p>Police Department - obsazene</p>
 <p>Sheriff Department - volné</p>
 <p>Emergency Medical Services - volné</p>
 <p>Goverment - volné</p>
+
 <p>-----------------------------------</p>
+
 <p>Dílny</p>
+
 <p>-----------------------------------</p>
-<p> Benny´s Original Motorworks - volné</p>
+
+<p>Benny´s Original Motorworks - volné</p>
 <p>Los Santos Customs - volné</p>
 <p>Auto Exotic - volné</p>
+
 <p>-----------------------------------</p>
+
 <p>Podniky</p>
+
 <p>-----------------------------------</p>
+
 <p>Irish pub - volné</p>
 <p>Tequi-la-la - volné</p>
 <p>Bahama Mamas - volné</p>
 <p>Vanilla Unicorn - volné</p>
 <p>Salieri´s Bar - volné</p>
-<p>Burger Shot - volné</p></div>
+<p>Burger Shot - volné</p>
 
 </div>
 
-</section>
+</div>
+</div>
+
+</div>
 
 <!-- TEAM -->
 
-<section id="team" class="page">
+<div id="teamPage" class="hidden">
 
-<h2 class="section-title">Náš Team</h2>
+<section class="hero">
+<h1>NÁŠ TÝM</h1>
+</section>
+
+<div class="container">
 
 <div class="grid">
 
-<div class="card">
-<h3>Owner</h3>
+<div class="rule">
+<h3><b>Owner</b></h3>
 <p>Dollar</p>
 </div>
 
-<div class="card">
-<h3>Co-Owner</h3>
+<div class="rule">
+<h3><b>Co-Owner</b></h3>
 <p>Přemek</p>
 </div>
 
-<div class="card">
-<h3>Management</h3>
+<div class="rule">
+<h3><b>Management</b></h3>
 <p>Krteček</p>
 </div>
 
-<div class="card">
-<h3>Head of Staff</h3>
+<div class="rule">
+<h3><b>Head of Staff</b></h3>
 <p>Ifwik</p>
 </div>
 
-<div class="card">
-<h3>Staff</h3>
+<div class="rule">
+<h3><b>Staff</b></h3>
 <p>Kubusus</p>
 </div>
 
-<div class="card">
-<h3>Staff</h3>
+<div class="rule">
+<h3><b>Staff</b></h3>
 <p>Tobyycz</p>
 </div>
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 <!-- PRAVIDLA -->
 
 <div id="rulesPage" class="hidden">
+
 <section class="hero">
 <h1>PRAVIDLA</h1>
 <p>Profesionalita - Realismus - Respekt</p>
 </section>
 
 <div class="container">
+
 <div class="grid">
-<div class="rule"><h3><b>Znalost pravidel</b></h3><p>Každý hráč je povinen znát všechna pravidla serveru ještě před vstupem do hry. Neznalost pravidel není omluva a jakékoliv jejich porušení může vést k trestu. Hráč nese plnou odpovědnost za své chování.</p></div>
 
-<div class="rule"><h3><b>RolePlay</b></h3><p>Každý hráč je povinen hrát svou postavu realisticky, uvěřitelně a v souladu s prostředím serveru. Postava by měla mít vlastní osobnost, minulost a motivace, které ovlivňují její chování. Je důležité si uvědomit, že nehrajete sami sebe, ale fiktivní charakter, který reaguje na situace tak, jak by reagoval reálný člověk v dané situaci.
+<div class="rule">
+<h3><b>Znalost pravidel</b></h3>
 
-Je zakázáno provádět nerealistické úkony, jako je ignorování zranění, okamžité zotavení po vážné nehodě nebo chování, které odporuje fyzickým možnostem člověka. Například pokud vaše postava utrpí vážné zranění při autonehodě nebo přestřelce, je nutné toto zranění odpovídajícím způsobem vyhrát (RP) a ne pokračovat, jako by se nic nestalo.
+<p>
+Každý hráč je povinen znát všechna pravidla serveru ještě před vstupem do hry.
+Neznalost pravidel není omluva a jakékoliv jejich porušení může vést k trestu.
 
-Roleplay by měl být plynulý, smysluplný a měl by přispívat k zážitku všech hráčů na serveru. Každý hráč by měl dbát na kvalitu RP, nikoliv jen na vlastní prospěch nebo výhody.</p></div>
+Hráč nese plnou odpovědnost za své chování.
+</p>
 
-<div class="rule"><h3><b>Cheaty a bugy</b></h3><p>Používání jakýchkoliv cheatů, hacků nebo externích programů, které poskytují nefér výhodu nad ostatními hráči, je přísně zakázáno a bude trestáno permanentním banem bez možnosti odvolání.
-
-Stejně tak je zakázáno zneužívání herních chyb, známých jako bugy nebo glitchy. To zahrnuje například duplikaci itemů, procházení zdmi, zneužívání animací nebo jakékoliv jiné mechaniky, která není zamýšlená.
-
-Pokud hráč objeví bug, je jeho povinností jej neprodleně nahlásit administraci a dále jej nevyužívat. Zneužití bugů bude považováno za porušení pravidel, i pokud hráč tvrdí, že šlo o testování.</p></div>
-
-<div class="rule"><h3><b>Mixing</b></h3><p>Mixing znamená kombinování informací z reálného světa (OOC – Out Of Character) s informacemi ve hře (IC – In Character). Toto chování je přísně zakázáno, protože narušuje férovost a realističnost roleplaye.
-
-Hráč nesmí využívat informace získané například z Discordu, streamů, chatu nebo od kamarádů mimo hru. Postava může jednat pouze na základě informací, které skutečně získala ve hře přirozeným RP způsobem.
-
-Porušení tohoto pravidla zahrnuje například situace, kdy hráč ví o lokaci jiného hráče díky streamu a vydá se tam ve hře, i když jeho postava tuto informaci nemá.</p></div>
-
-<div class="rule"><h3><b>Combat Logging</b></h3><p>Combat logging je úmyslné odpojení ze serveru během probíhající RP situace s cílem vyhnout se následkům. To zahrnuje například odpojení během přestřelky, zatýkání, únosu nebo jiného konfliktu.
-
-Takové jednání je přísně zakázáno. Pokud dojde k odpojení z technických důvodů, je hráč povinen se co nejdříve vrátit zpět do hry a kontaktovat ostatní hráče nebo administraci, aby mohla být situace korektně dohrána.
-
-Opakované porušení tohoto pravidla bude přísně trestáno.</p></div>
-
-<div class="rule"><h3><b>RP akce</b></h3><p>Každá akce na serveru musí mít logický a realistický důvod. Není dovoleno zahajovat konflikty bez příčiny nebo provádět náhodné násilí vůči ostatním hráčům.
-
-Větší akce, jako jsou loupeže, únosy, přepadení nebo přestřelky, by měly být promyšlené a odpovídat situaci ve hře. Hráči by měli vždy dbát na to, aby jejich akce nebyly zaměřené pouze na zisk, ale také na kvalitní RP pro všechny zúčastněné.
-
-Je zakázáno narušovat RP ostatních hráčů nebo úmyslně kazit průběh akce.</p></div>
-
-<div class="rule"><h3><b>Více postav</b></h3><p>Hráč může mít více postav, ale každá z nich musí být hraná jako samostatná osoba. Postavy mezi sebou nesmí sdílet informace, majetek ani žádné výhody.
-
-Je zakázáno využívat jednu postavu k tomu, aby pomáhala druhé, například převodem peněz nebo předáváním informací. Také není dovoleno, aby postavy věděly o sobě navzájem bez schválení administrace.
-
-Každá postava musí mít vlastní příběh a musí být hraná férově.</p></div>
-
-<div class="rule"><h3><b>Driving</b></h3><p>Řízení vozidel musí být realistické a odpovídat prostředí. Hráči by měli dodržovat dopravní pravidla a přizpůsobit svou jízdu situaci.
-
-Je zakázáno jezdit nerealisticky, například extrémní rychlostí v hustě obydlených oblastech, úmyslně bourat nebo využívat vozidla způsobem, který by v reálném světě nebyl možný.
-
-Dopravní nehody musí být vždy odpovídajícím způsobem odehrány v RP.</p></div>
-
-<div class="rule"><h3><b>Kill on Sight (KOS)</b></h3><p>KOS, neboli „zabití na první pohled“, znamená usmrcení jiné postavy bez jakékoliv předchozí interakce nebo roleplay důvodu. Takové jednání je přísně zakázáno, protože zcela ničí smysl roleplaye a připravuje druhého hráče o možnost reagovat nebo situaci odehrát.
-
-Každý konflikt musí být nejprve rozehrán prostřednictvím RP, například slovní konfrontací, vyhrožováním nebo jinou interakcí, která dává druhé straně šanci reagovat. Okamžité použití smrtící síly bez předchozího vývoje situace není dovoleno.</p></div>
-
-<div class="rule"><h3><b>Player Kill (PK)</b></h3><p>Player Kill označuje situaci, kdy je postava zabita, ale hráč ji může nadále používat. V takovém případě je však nutné dodržet pravidlo ztráty paměti na události vedoucí k smrti.
-
-To znamená, že si postava nepamatuje, kdo ji zabil, kde přesně se to stalo ani jaké okolnosti tomu předcházely. Hráč nesmí tyto informace využívat k následné pomstě nebo pokračování konfliktu.
-
-Po oživení je také zakázáno se vracet na místo smrti s cílem pokračovat v akci. Postava by měla jednat, jako by utrpěla vážné trauma a snažila se situaci vyhodnotit realisticky.</p></div>
-
-<div class="rule"><h3><b>Character Kill (CK)</b></h3><p>Character Kill představuje trvalou smrt postavy. Po jeho provedení již hráč nesmí tuto postavu nijak využívat ani se k ní vracet. CK je závažný zásah do hry a měl by být používán pouze ve výjimečných a dobře odůvodněných případech.
-
-Obvykle se jedná o vyvrcholení dlouhodobého konfliktu, zásadní RP situace nebo rozhodnutí samotného hráče ukončit příběh své postavy. V mnoha případech je nutné schválení administrace.
-
-CK by nikdy neměl být proveden náhodně nebo bez dostatečného RP pozadí.</p></div>
-
-<div class="rule"><h3><b>Second CK</b></h3><p>Second CK označuje opětovné zabití nové nebo jiné postavy stejného hráče bez relevantního důvodu. Takové cílení na konkrétního hráče je zakázáno a považuje se za formu obtěžování.
-
-Hráči nesmí zneužívat znalosti o osobě za postavou k tomu, aby ji opakovaně likvidovali. Každá nová postava musí mít možnost začít „od nuly“ bez neustálého ohrožení kvůli minulosti hráče.</p></div>
-
-<div class="rule"><h3><b>Revenge Kill</b></h3><p>PRevenge Kill znamená zabití jiné postavy jako pomstu za předchozí smrt, aniž by k tomu existoval legitimní RP důvod. Vzhledem k tomu, že si postava po PK nepamatuje okolnosti své smrti, není možné se vracet a mstít.
-
-Jakákoliv pomsta musí vycházet z aktuální RP situace a informací, které postava skutečně má. Využívání OOC znalostí k pomstě je přísně zakázáno.Revenge kill můžete vykonat po 1h reálného času.</p></div>
-
-<div class="rule"><h3><b>Vehicle Kill (VDM)</b></h3><p>Vehicle Kill označuje použití vozidla jako zbraně k úmyslnému zabití nebo zranění jiné postavy bez odpovídajícího RP důvodu.
-
-Není dovoleno najíždět do hráčů, přejíždět je nebo jinak zneužívat vozidla k útoku, pokud k tomu není jasný a realistický důvod. Vozidla mohou být použita v konfliktech pouze v přiměřené míře a vždy musí odpovídat situaci.
-
-Například úmyslné přejíždění hráčů bez předchozí interakce je považováno za porušení pravidel.</p></div>
-
-<div class="rule"><h3><b>Zranění (Injuries)</b></h3><p>Každé zranění, které postava utrpí, musí být odpovídajícím způsobem odehráno. Hráč je povinen reagovat na bolest, omezení pohybu nebo jiné následky zranění realisticky.
-
-Není dovoleno ignorovat střelná zranění, vážné nehody nebo jiné situace, které by měly zásadní dopad na fyzický stav postavy.
-
-Zranění by měla ovlivnit další chování postavy, například omezení v pohybu, nutnost vyhledat lékařskou pomoc nebo delší rekonvalescenci.</p></div>
-
-<div class="rule"><h3><b>Passive RP</b></h3><p>Passive RP představuje základní úkony, které se automaticky předpokládají, i když nejsou explicitně zahrány.
-
-Například se předpokládá, že postava má u sebe běžné věci, zamyká vozidlo nebo používá bezpečnostní pás. Tyto činnosti není nutné neustále vypisovat, ale hráči by je měli respektovat a nezneužívat jejich absence.
-
-Passive RP slouží k plynulosti hry a zamezuje zbytečnému spamování příkazů.</p></div>
-
-<div class="rule"><h3><b>Gross RP</b></h3><p>Gross RP zahrnuje extrémní nebo citlivé situace, jako je mučení, kanibalismus nebo jiné drastické jednání. Takové RP je povoleno pouze za předpokladu, že s ním souhlasí všechny zúčastněné strany.
-
-Nikdo nesmí být nucen účastnit se RP, které mu je nepříjemné. V případě nesouhlasu je nutné situaci upravit nebo ukončit.
-
-Cílem je zachovat komfort všech hráčů a zároveň umožnit hlubší RP pro ty, kteří o něj mají zájem.</p></div>
-
-<div class="rule"><h3><b>/me</b></h3><p>Příkaz /me slouží k popisu akcí, které vaše postava vykonává, ale nejsou přímo viditelné pomocí herních animací nebo mechanik. Pomocí tohoto příkazu doplňujete roleplay o detaily, které dělají hru realističtější a plynulejší.
-
-Text psaný za /me by měl být vždy ve třetí osobě a měl by popisovat konkrétní činnost vaší postavy. Je důležité, aby tyto akce byly realistické, proveditelné a odpovídaly aktuální situaci.
-
-Hráč nesmí pomocí /me vynucovat reakce ostatních hráčů. To znamená, že není dovoleno psát akce, které automaticky ovlivňují druhou postavu bez její možnosti reagovat.</p></div>
-
-<div class="rule"><h3><b>/do</b></h3><p>Příkaz /do slouží k popisu situace, okolí nebo výsledku určité akce. Používá se také pro doplnění informací, které nelze jinak zjistit, nebo pro pokládání otázek směrem k ostatním hráčům.
-
-Na rozdíl od /me se /do často používá k tomu, aby ostatní hráči mohli reagovat nebo rozhodnout o výsledku akce. Tento příkaz by měl být používán férově a neměl by být zneužíván k získání výhody.
-
-Hráč nesmí pomocí /do určovat výsledek situace jednostranně, pokud se týká více hráčů. Výsledek by měl být otevřený nebo ponechaný na reakci ostatních.</p></div>
-
-<div class="rule"><h3><b>Hood Fear</b></h3><p>Hood Fear znamená respektování nebezpečných oblastí, jako jsou území gangů. Pokud se hráč nachází na cizím území, měl by se chovat opatrně a s respektem k místním pravidlům.
-
-Není realistické, aby se postava bezdůvodně pohybovala v nebezpečné oblasti a provokovala místní hráče bez obav o vlastní bezpečnost.
-
-Porušení tohoto pravidla je považováno za nerealistické RP.</p></div>
-
-<div class="rule"><h3><b>Chování k AT</b></h3><p>Hráči jsou povinni respektovat administrátory a jejich rozhodnutí. Administrace má vždy poslední slovo při řešení konfliktů a porušení pravidel.
-
-Jakékoliv urážky, ignorování pokynů nebo snaha obcházet rozhodnutí administrace je zakázána.
-
-V případě nesouhlasu má hráč možnost podat slušné odvolání, nikoliv řešit situaci konfliktně.</p></div>
-
-<div class="rule"><h3><b>Fear RP</b></h3><p>Fear RP znamená hraní strachu o vlastní život. Pokud je postava ohrožena, například když na ni někdo míří zbraní nebo je v přesile, musí reagovat realisticky.
-
-Není dovoleno ignorovat hrozbu, provokovat útočníka nebo se snažit situaci nefér otočit ve svůj prospěch.
-
-Postava by měla jednat tak, aby minimalizovala riziko smrti nebo zranění, stejně jako by to udělal skutečný člověk.</p></div>
-
-<div class="rule"><h3><b>Power Gaming</b></h3><p>Power Gaming znamená vykonávání nereálných nebo fyzicky nemožných akcí, případně vynucování akcí na ostatních hráčích bez jejich možnosti reakce. Jedná se o chování, které porušuje realističnost roleplaye a dává hráči nefér výhodu.
-
-Hráč nesmí dělat věci, které by v reálném světě nebyly možné, jako například zvládnout přesilu několika ozbrojených osob bez zranění, ignorovat fyzické limity postavy nebo provádět extrémní akrobatické úkony bez jakéhokoliv omezení.
-
-Power Gaming zahrnuje také situace, kdy hráč pomocí příkazů (např. /me) nutí ostatní hráče k určité reakci, aniž by jim dal možnost reagovat.</p></div>
-<div class="rule"><h3><b>AssPulling</b></h3><p>Asspulling označuje situaci, kdy si hráč „vytáhne“ předmět, informaci nebo schopnost bez předchozího roleplaye nebo logického vysvětlení. Jedná se o nerealistické doplňování věcí do hry jen proto, aby hráč získal výhodu.
-
-Každý předmět nebo informace, kterou postava používá, by měla být nějakým způsobem odehraná nebo alespoň logicky podložená. Není dovoleno si náhle „vymyslet“, že má postava u sebe něco, co předtím nijak nezmínila ani nezískala.</p></div>
-<div class="rule"><h3><b>MetaGaming</b></h3><p>Metagaming znamená využívání informací získaných mimo hru (OOC) přímo ve hře (IC). Toto pravidlo je velmi důležité pro zachování férového a kvalitního roleplaye.
-
-Hráč může jednat pouze na základě informací, které jeho postava skutečně získala během hry. Jakékoliv informace z Discordu, streamů, chatu nebo od jiných hráčů mimo hru nesmí být použity.
-
-Metagaming zahrnuje i situace, kdy hráč pozná jiného hráče podle hlasu nebo jména nad postavou, i když jeho postava tuto informaci nemá.</p></div>
-<div class="rule"><h3><b>Fail RP</b></h3><p>Fail RP označuje obecné porušení zásad roleplaye nebo hraní nereálných, nesmyslných či nekvalitních situací. Jedná se o široký pojem, který zahrnuje jakékoliv chování, které kazí RP zážitek ostatním hráčům.
-
-Fail RP může zahrnovat ignorování pravidel, nerealistické reakce, nesmyslné jednání nebo úmyslné narušování hry.
-
-Hráč by měl vždy dbát na to, aby jeho chování odpovídalo situaci a prostředí. Pokud hráč opakovaně porušuje základní principy RP, může být potrestán.</p></div>
-<div class="rule"><h3><b>Water Evading</b></h3><p>Water evading znamená úmyslné využití vody k útěku před policií nebo jinou RP situací za účelem vyhnutí se dopadení. Takové chování je povoleno pouze částečně a musí splňovat jasná omezení, aby zůstala zachována férovost a realističnost RP.
-
-Hráči mohou využívat vodní plochy na mapě, jako jsou řeky, kanály nebo jezero Alamo Sea, k pohybu nebo úniku v rámci RP situace. Tyto oblasti jsou považovány za součást běžného herního prostředí a mohou být součástí honiček nebo RP scén.
-
-Je však přísně zakázáno unikat do otevřeného oceánu mimo mapu nebo na její okraje, kde již není reálná možnost pokračování RP interakce. Únik směrem do hlubokého oceánu nebo mimo hranice mapy je považován za exploit a porušení pravidel.</p></div>
-  
 </div>
 
-</section>
+<div class="rule">
+<h3><b>RolePlay</b></h3>
+
+<p>
+Každý hráč je povinen hrát svou postavu realisticky,
+uvěřitelně a v souladu s prostředím serveru.
+
+Postava by měla mít vlastní osobnost,
+minulost a motivace, které ovlivňují její chování.
+
+Je důležité si uvědomit,
+že nehrajete sami sebe,
+ale fiktivní charakter,
+který reaguje na situace tak,
+jak by reagoval reálný člověk v dané situaci.
+
+Je zakázáno provádět nerealistické úkony,
+jako je ignorování zranění,
+okamžité zotavení po vážné nehodě
+nebo chování,
+které odporuje fyzickým možnostem člověka.
+
+Například pokud vaše postava utrpí vážné zranění při autonehodě nebo přestřelce,
+je nutné toto zranění odpovídajícím způsobem vyhrát (RP)
+a ne pokračovat,
+jako by se nic nestalo.
+
+Roleplay by měl být plynulý,
+smysluplný a měl by přispívat k zážitku všech hráčů na serveru.
+
+Každý hráč by měl dbát na kvalitu RP,
+nikoliv jen na vlastní prospěch nebo výhody.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Cheaty a bugy</b></h3>
+
+<p>
+Používání jakýchkoliv cheatů,
+hacků nebo externích programů,
+které poskytují nefér výhodu nad ostatními hráči,
+je přísně zakázáno a bude trestáno permanentním banem bez možnosti odvolání.
+
+Stejně tak je zakázáno zneužívání herních chyb,
+známých jako bugy nebo glitchy.
+
+To zahrnuje například duplikaci itemů,
+procházení zdmi,
+zneužívání animací nebo jakékoliv jiné mechaniky,
+která není zamýšlená.
+
+Pokud hráč objeví bug,
+je jeho povinností jej neprodleně nahlásit administraci
+a dále jej nevyužívat.
+
+Zneužití bugů bude považováno za porušení pravidel,
+i pokud hráč tvrdí,
+že šlo o testování.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Mixing</b></h3>
+
+<p>
+Mixing znamená kombinování informací z reálného světa (OOC)
+s informacemi ve hře (IC).
+
+Toto chování je přísně zakázáno,
+protože narušuje férovost a realističnost roleplaye.
+
+Hráč nesmí využívat informace získané například z Discordu,
+streamů,
+chatu nebo od kamarádů mimo hru.
+
+Postava může jednat pouze na základě informací,
+které skutečně získala ve hře přirozeným RP způsobem.
+
+Porušení tohoto pravidla zahrnuje například situace,
+kdy hráč ví o lokaci jiného hráče díky streamu
+a vydá se tam ve hře,
+i když jeho postava tuto informaci nemá.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Combat Logging</b></h3>
+
+<p>
+Combat logging je úmyslné odpojení ze serveru během probíhající RP situace
+s cílem vyhnout se následkům.
+
+To zahrnuje například odpojení během přestřelky,
+zatýkání,
+únosu nebo jiného konfliktu.
+
+Takové jednání je přísně zakázáno.
+
+Pokud dojde k odpojení z technických důvodů,
+je hráč povinen se co nejdříve vrátit zpět do hry
+a kontaktovat ostatní hráče nebo administraci,
+aby mohla být situace korektně dohrána.
+
+Opakované porušení tohoto pravidla bude přísně trestáno.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>RP akce</b></h3>
+
+<p>
+Každá akce na serveru musí mít logický a realistický důvod.
+
+Není dovoleno zahajovat konflikty bez příčiny
+nebo provádět náhodné násilí vůči ostatním hráčům.
+
+Větší akce,
+jako jsou loupeže,
+únosy,
+přepadení nebo přestřelky,
+by měly být promyšlené
+a odpovídat situaci ve hře.
+
+Hráči by měli vždy dbát na to,
+aby jejich akce nebyly zaměřené pouze na zisk,
+ale také na kvalitní RP pro všechny zúčastněné.
+
+Je zakázáno narušovat RP ostatních hráčů
+nebo úmyslně kazit průběh akce.
+</p>
+
+</div>
+
+
+<div class="rule">
+<h3><b>Více postav</b></h3>
+
+<p>
+Hráč může mít více postav, ale každá z nich musí být hraná jako samostatná osoba.
+
+Postavy mezi sebou nesmí sdílet informace,
+majetek ani žádné výhody.
+
+Je zakázáno využívat jednu postavu k tomu,
+aby pomáhala druhé,
+například převodem peněz nebo předáváním informací.
+
+Také není dovoleno,
+aby postavy věděly o sobě navzájem bez schválení administrace.
+
+Každá postava musí mít vlastní příběh
+a musí být hraná férově.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Driving</b></h3>
+
+<p>
+Řízení vozidel musí být realistické a odpovídat prostředí.
+
+Hráči by měli dodržovat dopravní pravidla
+a přizpůsobit svou jízdu situaci.
+
+Je zakázáno jezdit nerealisticky,
+například extrémní rychlostí v hustě obydlených oblastech,
+úmyslně bourat
+nebo využívat vozidla způsobem,
+který by v reálném světě nebyl možný.
+
+Dopravní nehody musí být vždy odpovídajícím způsobem odehrány v RP.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Kill on Sight (KOS)</b></h3>
+
+<p>
+KOS neboli „zabití na první pohled“
+znamená usmrcení jiné postavy bez jakékoliv předchozí interakce
+nebo roleplay důvodu.
+
+Takové jednání je přísně zakázáno,
+protože zcela ničí smysl roleplaye
+a připravuje druhého hráče o možnost reagovat nebo situaci odehrát.
+
+Každý konflikt musí být nejprve rozehrán prostřednictvím RP,
+například slovní konfrontací,
+vyhrožováním nebo jinou interakcí,
+která dává druhé straně šanci reagovat.
+
+Okamžité použití smrtící síly bez předchozího vývoje situace není dovoleno.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Player Kill (PK)</b></h3>
+
+<p>
+Player Kill označuje situaci,
+kdy je postava zabita,
+ale hráč ji může nadále používat.
+
+V takovém případě je však nutné dodržet pravidlo ztráty paměti
+na události vedoucí k smrti.
+
+To znamená,
+že si postava nepamatuje,
+kdo ji zabil,
+kde přesně se to stalo
+ani jaké okolnosti tomu předcházely.
+
+Hráč nesmí tyto informace využívat
+k následné pomstě nebo pokračování konfliktu.
+
+Po oživení je také zakázáno se vracet na místo smrti
+s cílem pokračovat v akci.
+
+Postava by měla jednat,
+jako by utrpěla vážné trauma
+a snažila se situaci vyhodnotit realisticky.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Character Kill (CK)</b></h3>
+
+<p>
+Character Kill představuje trvalou smrt postavy.
+
+Po jeho provedení již hráč nesmí tuto postavu nijak využívat ani se k ní vracet.
+
+CK je závažný zásah do hry
+a měl by být používán pouze ve výjimečných a dobře odůvodněných případech.
+
+Obvykle se jedná o vyvrcholení dlouhodobého konfliktu,
+zásadní RP situace
+nebo rozhodnutí samotného hráče ukončit příběh své postavy.
+
+V mnoha případech je nutné schválení administrace.
+
+CK by nikdy neměl být proveden náhodně
+nebo bez dostatečného RP pozadí.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Second CK</b></h3>
+
+<p>
+Second CK označuje opětovné zabití nové nebo jiné postavy stejného hráče
+bez relevantního důvodu.
+
+Takové cílení na konkrétního hráče je zakázáno
+a považuje se za formu obtěžování.
+
+Hráči nesmí zneužívat znalosti o osobě za postavou
+k tomu,
+aby ji opakovaně likvidovali.
+
+Každá nová postava musí mít možnost začít od nuly
+bez neustálého ohrožení kvůli minulosti hráče.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Revenge Kill</b></h3>
+
+<p>
+Revenge Kill znamená zabití jiné postavy jako pomstu
+za předchozí smrt,
+aniž by k tomu existoval legitimní RP důvod.
+
+Vzhledem k tomu,
+že si postava po PK nepamatuje okolnosti své smrti,
+není možné se vracet a mstít.
+
+Jakákoliv pomsta musí vycházet z aktuální RP situace
+a informací,
+které postava skutečně má.
+
+Využívání OOC znalostí k pomstě je přísně zakázáno.
+
+Revenge kill můžete vykonat po 1 hodině reálného času.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Vehicle Kill (VDM)</b></h3>
+
+<p>
+Vehicle Kill označuje použití vozidla jako zbraně
+k úmyslnému zabití nebo zranění jiné postavy
+bez odpovídajícího RP důvodu.
+
+Není dovoleno najíždět do hráčů,
+přejíždět je
+nebo jinak zneužívat vozidla k útoku,
+pokud k tomu není jasný a realistický důvod.
+
+Například úmyslné přejíždění hráčů bez předchozí interakce
+je považováno za porušení pravidel.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Zranění (Injuries)</b></h3>
+
+<p>
+Každé zranění,
+které postava utrpí,
+musí být odpovídajícím způsobem odehráno.
+
+Hráč je povinen reagovat na bolest,
+omezení pohybu
+nebo jiné následky zranění realisticky.
+
+Není dovoleno ignorovat střelná zranění,
+vážné nehody
+nebo jiné situace,
+které by měly zásadní dopad na fyzický stav postavy.
+
+Zranění by měla ovlivnit další chování postavy.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Passive RP</b></h3>
+
+<p>
+Passive RP představuje základní úkony,
+které se automaticky předpokládají,
+i když nejsou explicitně zahrány.
+
+Například se předpokládá,
+že postava má u sebe běžné věci,
+zamyká vozidlo
+nebo používá bezpečnostní pás.
+
+Passive RP slouží k plynulosti hry
+a zamezuje zbytečnému spamování příkazů.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Gross RP</b></h3>
+
+<p>
+Gross RP zahrnuje extrémní nebo citlivé situace,
+jako je mučení,
+kanibalismus
+nebo jiné drastické jednání.
+
+Takové RP je povoleno pouze za předpokladu,
+že s ním souhlasí všechny zúčastněné strany.
+
+Nikdo nesmí být nucen účastnit se RP,
+které mu je nepříjemné.
+</p>
+
+</div>
+
+
+<div class="rule">
+<h3><b>/me</b></h3>
+
+<p>
+Příkaz /me slouží k popisu akcí,
+které vaše postava vykonává,
+ale nejsou přímo viditelné pomocí herních animací nebo mechanik.
+
+Pomocí tohoto příkazu doplňujete roleplay o detaily,
+které dělají hru realističtější a plynulejší.
+
+Text psaný za /me by měl být vždy ve třetí osobě
+a měl by popisovat konkrétní činnost vaší postavy.
+
+Hráč nesmí pomocí /me vynucovat reakce ostatních hráčů.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>/do</b></h3>
+
+<p>
+Příkaz /do slouží k popisu situace,
+okolí nebo výsledku určité akce.
+
+Používá se také pro doplnění informací,
+které nelze jinak zjistit,
+nebo pro pokládání otázek směrem k ostatním hráčům.
+
+Hráč nesmí pomocí /do určovat výsledek situace jednostranně,
+pokud se týká více hráčů.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Hood Fear</b></h3>
+
+<p>
+Hood Fear znamená respektování nebezpečných oblastí,
+jako jsou území gangů.
+
+Pokud se hráč nachází na cizím území,
+měl by se chovat opatrně a s respektem k místním pravidlům.
+
+Není realistické,
+aby se postava bezdůvodně pohybovala v nebezpečné oblasti
+a provokovala místní hráče bez obav o vlastní bezpečnost.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Chování k AT</b></h3>
+
+<p>
+Hráči jsou povinni respektovat administrátory
+a jejich rozhodnutí.
+
+Administrace má vždy poslední slovo
+při řešení konfliktů a porušení pravidel.
+
+Jakékoliv urážky,
+ignorování pokynů
+nebo snaha obcházet rozhodnutí administrace
+je zakázána.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Fear RP</b></h3>
+
+<p>
+Fear RP znamená hraní strachu o vlastní život.
+
+Pokud je postava ohrožena,
+například když na ni někdo míří zbraní
+nebo je v přesile,
+musí reagovat realisticky.
+
+Postava by měla jednat tak,
+aby minimalizovala riziko smrti nebo zranění,
+stejně jako by to udělal skutečný člověk.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Power Gaming</b></h3>
+
+<p>
+Power Gaming znamená vykonávání nereálných
+nebo fyzicky nemožných akcí,
+případně vynucování akcí na ostatních hráčích
+bez jejich možnosti reakce.
+
+Jedná se o chování,
+které porušuje realističnost roleplaye
+a dává hráči nefér výhodu.
+
+Hráč nesmí dělat věci,
+které by v reálném světě nebyly možné,
+jako například zvládnout přesilu několika ozbrojených osob bez zranění,
+ignorovat fyzické limity postavy
+nebo provádět extrémní akrobatické úkony bez omezení.
+
+Power Gaming zahrnuje také situace,
+kdy hráč pomocí příkazů (např. /me)
+nutí ostatní hráče k určité reakci,
+aniž by jim dal možnost reagovat.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>AssPulling</b></h3>
+
+<p>
+Asspulling označuje situaci,
+kdy si hráč vytáhne předmět,
+informaci nebo schopnost
+bez předchozího roleplaye
+nebo logického vysvětlení.
+
+Každý předmět nebo informace,
+kterou postava používá,
+by měla být nějakým způsobem odehraná
+nebo alespoň logicky podložená.
+
+Není dovoleno si náhle vymyslet,
+že má postava u sebe něco,
+co předtím nijak nezmínila ani nezískala.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>MetaGaming</b></h3>
+
+<p>
+Metagaming znamená využívání informací získaných mimo hru (OOC)
+přímo ve hře (IC).
+
+Hráč může jednat pouze na základě informací,
+které jeho postava skutečně získala během hry.
+
+Jakékoliv informace z Discordu,
+streamů,
+chatu nebo od jiných hráčů mimo hru
+nesmí být použity.
+
+Metagaming zahrnuje i situace,
+kdy hráč pozná jiného hráče podle hlasu
+nebo jména nad postavou,
+i když jeho postava tuto informaci nemá.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Fail RP</b></h3>
+
+<p>
+Fail RP označuje obecné porušení zásad roleplaye
+nebo hraní nereálných,
+nesmyslných či nekvalitních situací.
+
+Jedná se o široký pojem,
+který zahrnuje jakékoliv chování,
+které kazí RP zážitek ostatním hráčům.
+
+Hráč by měl vždy dbát na to,
+aby jeho chování odpovídalo situaci a prostředí.
+</p>
+
+</div>
+
+<div class="rule">
+<h3><b>Water Evading</b></h3>
+
+<p>
+Water evading znamená úmyslné využití vody k útěku
+před policií nebo jinou RP situací
+za účelem vyhnutí se dopadení.
+
+Hráči mohou využívat vodní plochy na mapě,
+jako jsou řeky,
+kanály nebo Alamo Sea,
+k pohybu nebo úniku v rámci RP situace.
+
+Je však přísně zakázáno unikat do otevřeného oceánu mimo mapu
+nebo na její okraje,
+kde již není reálná možnost pokračování RP interakce.
+
+Únik směrem do hlubokého oceánu
+nebo mimo hranice mapy
+je považován za exploit a porušení pravidel.
+</p>
+
+</div>
+
+</div>
+</div>
+
+</div>
 
 <footer>
-
-© 2026 Darway Reborn RP
-
+© 2026 Darkway Reborn RP
 </footer>
 
 <script>
 
 function showPage(pageId){
 
-document.querySelectorAll('.page').forEach(page=>{
-page.classList.remove('active');
-});
+document.getElementById("mainPage").classList.add("hidden");
+document.getElementById("teamPage").classList.add("hidden");
+document.getElementById("rulesPage").classList.add("hidden");
 
-document.getElementById(pageId).classList.add('active');
+document.getElementById(pageId).classList.remove("hidden");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
